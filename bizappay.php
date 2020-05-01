@@ -118,15 +118,14 @@ class Bizappay
 }
 
 // CREATE CATEGORY IF YOU DONT HAVE YET
-$category = new Bizappay("ctb1zxnj-3egk-9mjl-a9lo-qmp44rbniq04",true);
+$category = new Bizappay("your-api-key",true);
 $category->categoryName = "Kategori Cubaan.";
 $category->categoryDescription = "Kategori cubaan pembayaran.";
 $category = $category->createNewCategory();
 
 
 // CREATE A PAYMENT LINK
-$payment = new Bizappay("ctb1zxnj-3egk-9mjl-a9lo-qmp44rbniq04",true);
-// $payment->categoryCode = "4wlca6fy";
+$payment = new Bizappay("your-api-key",true);
 $payment->categoryCode = $category->categoryCode;
 $payment->billName = "Cubaan Pembayaran";
 $payment->billDescription = "Bayaran percubaan";
